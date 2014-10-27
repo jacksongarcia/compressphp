@@ -1,0 +1,14 @@
+{
+	"name": "CompressPHP",
+    "description": "Abstração de uma variedade de formatos de compactação em uma API simples.",
+    "authors": [
+        {
+            "name": "Jackson Garcia Pinheiro Juniro",
+            "email": "jacksongarciajr@gmail.com"
+        }
+    ],
+    "require":
+    {
+    	"php": ">=5.2.8"
+    }
+}
