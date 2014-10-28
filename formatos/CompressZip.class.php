@@ -16,7 +16,7 @@
 		*/
 		public function __construct() {
 			if (!extension_loaded('zip')) {
-				throw new Exception('php_zip.dll -> Not ablitade, php.ini -> Line descoment "extension=php_zip.dll"');   
+				throw new Exception('php_zip.dll -> Not enable, php.ini -> Line descoment "extension=php_zip.dll"');   
 			} else
 				$this->zip = new \ZipArchive();
 		}
@@ -45,8 +45,9 @@
 			$this->zip->addFile($file);	
 		}
 		
-		public function extr_file ($dir_file) {
-			$this->zip->extractTo($dir_file);
+		public function extr_file ($dir_file, $file_name=null) {
+			if ($file_name != null) $this->zip->extractTo($dir_file);
+			else $this->zip->extractTo($dir_file, $file_name);
 		}
 		
 		public function open_format ($file_name) {
@@ -57,6 +58,18 @@
 					return false;
 			} else
 				return false;
+		}
+		
+		public function delete_file ($file_name) {
+			$this->zip->deleteName($file_name);
+		}
+		
+		public function getFileName ($file_name) {
+			return $this->zip->getFromName($file_name);
+		}
+		
+		public function getFileIndex ($file_index) {
+			return $this->zip->getFromIndex($file_index);
 		}
 		
 		/**

@@ -104,24 +104,41 @@
 				throw new \Exception('OPEN ARCHIVE ERROR');
 		}
 		
-		public function add_to_archive ($dir_raiz, $dir_file, $dir_folder="") {
+		public function add_to_archive ($dir_raiz, $dir_file) {
 			if ($this->open_format ($dir_raiz)) {
-				$this->adc_file ($dir_save);
+				$this->adc_file ($dir_file);
 				$this->close_format();
 			} else
 				throw new \Exception('OPEN ARCHIVE ERROR');
 		}
 		
-		public function extract_file_archive ($dir_raiz, $dir_file) {
-			
+		public function extract_file_archive ($dir_raiz, $dir_file, $file_name) {
+			if ($this->open_format ($dir_raiz)) {
+				if (!file_exists (basename($dir_raiz))) {
+					mkdir('.\\'.basename($dir_raiz), 0777);
+					$this->extr_file (basename($dir_raiz), $file_name);
+					$this->close_format();
+				} else 
+					throw new \Exception('ARCHIVE EXISTS ERROR');
+			} else
+				throw new \Exception('OPEN ARCHIVE ERROR');
 		}
 		
-		public function delete_file ($dir_raiz, $dir_file) {
-		
+		public function delete_file ($dir_raiz, $file_name) {
+			if ($this->open_format ($dir_raiz)) {
+				$this->deleteName ($file_name);
+				$this->close_format();
+			} else
+				throw new \Exception('OPEN ARCHIVE ERROR');
 		}
 		
-		public function load_file ($dir_raiz, $file_name, $dir_index) {
-		
+		public function load_file ($dir_raiz, $file_name=null, $dir_index=null) {
+			if ($this->open_format ($dir_raiz)) {
+				if ($file_name != null) return $this->getFileName ($file_name);
+				else if ($dir_index !=) return $this->getFileName ($dir_index);
+				$this->close_format();
+			} else
+				throw new \Exception('OPEN ARCHIVE ERROR');
 		}
 
 	}

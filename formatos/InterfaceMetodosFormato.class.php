@@ -14,5 +14,11 @@
 		public function extr_file ($dir_file);
 		
 		public function open_format ($file_name);
+		
+		public function delete_file ($file_name);
+		
+		public function getFileName ($file_name);
+		
+		public function getFileIndex ($file_index);
 	}
 ?>
