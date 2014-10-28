@@ -1,6 +1,10 @@
 {
-	"name": "CompressPHP",
-    "description": "Abstração de uma variedade de formatos de compactação em uma API simples.",
+	"name": "jacksongarcia/CompressPHP",
+	"type": "library",
+	"keywords": ["zip","compressao"],
+    "description": "Abstração de uma variedade de formatos de compactação em um framework simples.",
+	"homepage": "https://github.com/jacksongarcia/CompressPHP",
+	"license": "MIT",
     "authors": [
         {
             "name": "Jackson Garcia Pinheiro Juniro",
