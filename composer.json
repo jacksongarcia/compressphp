@@ -1,5 +1,5 @@
 {
-	"name": "jacksongarcia/CompressPHP",
+	"name": "jacksongarcia/Compressphp",
 	"type": "library",
 	"keywords": ["zip","compressao"],
     "description": "Abstração de uma variedade de formatos de compactação em um framework simples.",
