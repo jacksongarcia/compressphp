@@ -1,14 +1,25 @@
 {
-	"name": "CompressPHP",
-    "description": "Abstração de uma variedade de formatos de compactação em uma API simples.",
+	"name": "jacksongarcia/compressphp",
+	"type": "library",
+	"keywords": ["zip","compressao"],
+    "description": "Abstração de uma variedade de formatos de compactação em um framework simples.",
+	"homepage": "https://github.com/jacksongarcia/compressphp",
+	"license": "MIT",
     "authors": [
         {
-            "name": "Jackson Garcia Pinheiro Juniro",
-            "email": "jacksongarciajr@gmail.com"
+            "name": "Jackson Garcia Pinheiro Junior",
+            "email": "jacksongarciajr@gmail.com",
+			"role": "developer"
         }
     ],
+	"autoload": {
+        "psr-0": {"Application\\": "src/"}
+    },
     "require":
     {
     	"php": ">=5.2.8"
+    },
+	 "require-dev": {
+        "phpunit/phpunit": "3.7.*"
     }
 }
